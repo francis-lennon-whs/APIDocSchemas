@@ -114,7 +114,8 @@
           "type": "string",
           "format": "uri-reference"
         }
-      },
+      }
+    },
     "XML": {
       "type": "object",
       "properties": {
@@ -240,7 +241,7 @@
     "definitions": {
       "type": "object",
       "additionalProperties": {
-        "$ref": "#/definitions/schema"
+        "$ref": "#/definitions/Schema"
       },
       "description": "One or more JSON objects describing the schemas being consumed and produced by the API."
     },
@@ -433,7 +434,7 @@
         "schema": {
           "oneOf": [
             {
-              "$ref": "#/definitions/schema"
+              "$ref": "#/definitions/Schema"
             },
             {
               "$ref": "#/definitions/fileSchema"
@@ -479,43 +480,43 @@
           "$ref": "#/definitions/collectionFormat"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         },
         "description": {
           "type": "string"
@@ -560,7 +561,7 @@
           "default": false
         },
         "schema": {
-          "$ref": "#/definitions/schema"
+          "$ref": "#/definitions/Schema"
         }
       },
       "additionalProperties": false
@@ -605,43 +606,43 @@
           "$ref": "#/definitions/collectionFormat"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         }
       }
     },
@@ -690,43 +691,43 @@
           "$ref": "#/definitions/collectionFormatWithMulti"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         }
       }
     },
@@ -775,43 +776,43 @@
           "$ref": "#/definitions/collectionFormatWithMulti"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         }
       }
     },
@@ -856,43 +857,43 @@
           "$ref": "#/definitions/collectionFormat"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         }
       }
     },
@@ -1199,7 +1200,7 @@
         "additionalProperties": {
           "anyOf": [
             {
-              "$ref": "#/definitions/schema"
+              "$ref": "#/definitions/Schema"
             },
             {
               "type": "boolean"
@@ -1213,13 +1214,13 @@
         "items": {
           "anyOf": [
             {
-              "$ref": "#/definitions/schema"
+              "$ref": "#/definitions/Schema"
             },
             {
               "type": "array",
               "minItems": 1,
               "items": {
-                "$ref": "#/definitions/schema"
+                "$ref": "#/definitions/Schema"
               }
             }
           ],
@@ -1229,13 +1230,13 @@
           "type": "array",
           "minItems": 1,
           "items": {
-            "$ref": "#/definitions/schema"
+            "$ref": "#/definitions/Schema"
           }
         },
         "properties": {
           "type": "object",
           "additionalProperties": {
-            "$ref": "#/definitions/schema"
+            "$ref": "#/definitions/Schema"
           },
           "default": {}
         },
@@ -1314,43 +1315,43 @@
           "$ref": "#/definitions/collectionFormat"
         },
         "default": {
-          "$ref": "#/definitions/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "maximum": {
-          "$ref": "#/definitions/maximum"
+          "$ref": "#/definitions/Schema/properties/maximum"
         },
         "exclusiveMaximum": {
-          "$ref": "#/definitions/exclusiveMaximum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
         },
         "minimum": {
-          "$ref": "#/definitions/minimum"
+          "$ref": "#/definitions/Schema/properties/minimum"
         },
         "exclusiveMinimum": {
-          "$ref": "#/definitions/exclusiveMinimum"
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
         },
         "maxLength": {
-          "$ref": "#/definitions/maxLength"
+          "$ref": "#/definitions/Schema/properties/maxLength"
         },
         "minLength": {
-          "$ref": "#/definitions/minLength"
+          "$ref": "#/definitions/Schema/properties/minLength"
         },
         "pattern": {
-          "$ref": "#/definitions/pattern"
+          "$ref": "#/definitions/Schema/properties/pattern"
         },
         "maxItems": {
-          "$ref": "#/definitions/maxItems"
+          "$ref": "#/definitions/Schema/properties/maxItems"
         },
         "minItems": {
-          "$ref": "#/definitions/minItems"
+          "$ref": "#/definitions/Schema/properties/minItems"
         },
         "uniqueItems": {
-          "$ref": "#/definitions/uniqueItems"
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
         },
         "enum": {
-          "$ref": "#/definitions/enum"
+          "$ref": "#/definitions/Schema/properties/enum"
         },
         "multipleOf": {
-          "$ref": "#/definitions/multipleOf"
+          "$ref": "#/definitions/Schema/properties/multipleOf"
         }
       },
       "patternProperties": {
@@ -1666,51 +1667,6 @@
       "type": "string",
       "enum": ["csv", "ssv", "tsv", "pipes", "multi"],
       "default": "csv"
-    },
-    "title": {
-      "$ref": "#/definitions/Schema/properties/title"
-    },
-    "description": {
-      "$ref": "#/definitions/Schema/properties/description"
-    },
-    "default": {
-      "$ref": "#/definitions/Schema/properties/default"
-    },
-    "multipleOf": {
-      "$ref": "#/definitions/Schema/properties/multipleOf"
-    },
-    "maximum": {
-      "$ref": "#/definitions/Schema/properties/maximum"
-    },
-    "exclusiveMaximum": {
-      "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
-    },
-    "minimum": {
-      "$ref": "#/definitions/Schema/properties/minimum"
-    },
-    "exclusiveMinimum": {
-      "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
-    },
-    "maxLength": {
-      "$ref": "#/definitions/Schema/properties/maxLength"
-    },
-    "minLength": {
-      "$ref": "#/definitions/Schema/properties/minLength"
-    },
-    "pattern": {
-      "$ref": "#/definitions/Schema/properties/pattern"
-    },
-    "maxItems": {
-      "$ref": "#/definitions/Schema/properties/maxItems"
-    },
-    "minItems": {
-      "$ref": "#/definitions/Schema/properties/minItems"
-    },
-    "uniqueItems": {
-      "$ref": "#/definitions/Schema/properties/uniqueItems"
-    },
-    "enum": {
-      "$ref": "#/definitions/Schema/properties/enum"
     },
     "jsonReference": {
       "type": "object",
