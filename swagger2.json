@@ -1,7 +1,7 @@
 {
   "title": "A JSON Schema for Swagger 2.0 API.",
   "id": "https://raw.githubusercontent.com/francis-lennon-whs/APIDocSchemas/master/swagger2.json",
-  "$schema": "#definitions/schema",
+  "$schema": "http://json-schema.org/draft-04/schema#",
   "type": "object",
   "required": ["swagger", "info", "paths"],
   "additionalProperties": false,
@@ -78,6 +78,70 @@
     }
   },
   "definitions": {
+    "Reference": {
+      "type": "object",
+      "required": ["$ref"],
+      "patternProperties": {
+        "^\\$ref$": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      }
+    },
+    "Discriminator": {
+      "type": "object",
+      "required": ["propertyName"],
+      "properties": {
+        "propertyName": {
+          "type": "string"
+        },
+        "mapping": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "ExternalDocumentation": {
+      "type": "object",
+      "required": ["url"],
+      "properties": {
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      },
+    "XML": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "namespace": {
+          "type": "string",
+          "format": "uri"
+        },
+        "prefix": {
+          "type": "string"
+        },
+        "attribute": {
+          "type": "boolean",
+          "default": false
+        },
+        "wrapped": {
+          "type": "boolean",
+          "default": false
+        }
+      },
+      "patternProperties": {
+        "^x-": {}
+      },
+      "additionalProperties": false
+    },
     "info": {
       "type": "object",
       "description": "General information about the API.",
@@ -860,7 +924,7 @@
         }
       ]
     },
-    "schema": {
+    "Schema": {
       "type": "object",
       "properties": {
         "title": {
@@ -1063,6 +1127,135 @@
       },
       "additionalProperties": false
     },
+    "schema": {
+      "type": "object",
+      "description": "A deterministic version of a JSON Schema object.",
+      "patternProperties": {
+        "^x-": {
+          "$ref": "#/definitions/vendorExtension"
+        }
+      },
+      "properties": {
+        "$ref": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string"
+        },
+        "title": {
+          "$ref": "#/definitions/Schema/properties/title"
+        },
+        "description": {
+          "$ref": "#/definitions/Schema/properties/description"
+        },
+        "default": {
+          "$ref": "#/definitions/Schema/properties/default"
+        },
+        "multipleOf": {
+          "$ref": "#/definitions/Schema/properties/multipleOf"
+        },
+        "maximum": {
+          "$ref": "#/definitions/Schema/properties/maximum"
+        },
+        "exclusiveMaximum": {
+          "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
+        },
+        "minimum": {
+          "$ref": "#/definitions/Schema/properties/minimum"
+        },
+        "exclusiveMinimum": {
+          "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
+        },
+        "maxLength": {
+          "$ref": "#/definitions/Schema/properties/maxLength"
+        },
+        "minLength": {
+          "$ref": "#/definitions/Schema/properties/minLength"
+        },
+        "pattern": {
+          "$ref": "#/definitions/Schema/properties/pattern"
+        },
+        "maxItems": {
+          "$ref": "#/definitions/Schema/properties/maxItems"
+        },
+        "minItems": {
+          "$ref": "#/definitions/Schema/properties/minItems"
+        },
+        "uniqueItems": {
+          "$ref": "#/definitions/Schema/properties/uniqueItems"
+        },
+        "maxProperties": {
+          "$ref": "#/definitions/Schema/properties/maxProperties"
+        },
+        "minProperties": {
+          "$ref": "#/definitions/Schema/properties/minProperties"
+        },
+        "required": {
+          "$ref": "#/definitions/Schema/properties/required"
+        },
+        "enum": {
+          "$ref": "#/definitions/Schema/properties/enum"
+        },
+        "additionalProperties": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/schema"
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "default": {}
+        },
+        "type": {
+          "$ref": "#/definitions/Schema/properties/type"
+        },
+        "items": {
+          "anyOf": [
+            {
+              "$ref": "#/definitions/schema"
+            },
+            {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/definitions/schema"
+              }
+            }
+          ],
+          "default": {}
+        },
+        "allOf": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/schema"
+          }
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/schema"
+          },
+          "default": {}
+        },
+        "discriminator": {
+          "type": "string"
+        },
+        "readOnly": {
+          "type": "boolean",
+          "default": false
+        },
+        "xml": {
+          "$ref": "#/definitions/xml"
+        },
+        "externalDocs": {
+          "$ref": "#/definitions/externalDocs"
+        },
+        "example": {}
+      },
+      "additionalProperties": false
+    },
     "fileSchema": {
       "type": "object",
       "description": "A deterministic version of a JSON Schema object.",
@@ -1077,16 +1270,16 @@
           "type": "string"
         },
         "title": {
-          "$ref": "#definitions/schema/properties/title"
+          "$ref": "#/definitions/Schema/properties/title"
         },
         "description": {
-          "$ref": "#definitions/schema/properties/description"
+          "$ref": "#/definitions/Schema/properties/description"
         },
         "default": {
-          "$ref": "#definitions/schema/properties/default"
+          "$ref": "#/definitions/Schema/properties/default"
         },
         "required": {
-          "$ref": "#definitions/schema/definitions/stringArray"
+          "$ref": "#/definitions/Schema/properties/required"
         },
         "type": {
           "type": "string",
@@ -1475,49 +1668,49 @@
       "default": "csv"
     },
     "title": {
-      "$ref": "#definitions/schema/properties/title"
+      "$ref": "#/definitions/Schema/properties/title"
     },
     "description": {
-      "$ref": "#definitions/schema/properties/description"
+      "$ref": "#/definitions/Schema/properties/description"
     },
     "default": {
-      "$ref": "#definitions/schema/properties/default"
+      "$ref": "#/definitions/Schema/properties/default"
     },
     "multipleOf": {
-      "$ref": "#definitions/schema/properties/multipleOf"
+      "$ref": "#/definitions/Schema/properties/multipleOf"
     },
     "maximum": {
-      "$ref": "#definitions/schema/properties/maximum"
+      "$ref": "#/definitions/Schema/properties/maximum"
     },
     "exclusiveMaximum": {
-      "$ref": "#definitions/schema/properties/exclusiveMaximum"
+      "$ref": "#/definitions/Schema/properties/exclusiveMaximum"
     },
     "minimum": {
-      "$ref": "#definitions/schema/properties/minimum"
+      "$ref": "#/definitions/Schema/properties/minimum"
     },
     "exclusiveMinimum": {
-      "$ref": "#definitions/schema/properties/exclusiveMinimum"
+      "$ref": "#/definitions/Schema/properties/exclusiveMinimum"
     },
     "maxLength": {
-      "$ref": "#definitions/schema/definitions/maxLength"
+      "$ref": "#/definitions/Schema/properties/maxLength"
     },
     "minLength": {
-      "$ref": "#definitions/schema/definitions/minLength"
+      "$ref": "#/definitions/Schema/properties/minLength"
     },
     "pattern": {
-      "$ref": "#definitions/schema/properties/pattern"
+      "$ref": "#/definitions/Schema/properties/pattern"
     },
     "maxItems": {
-      "$ref": "#definitions/schema/definitions/maxItems"
+      "$ref": "#/definitions/Schema/properties/maxItems"
     },
     "minItems": {
-      "$ref": "#definitions/schema/definitions/minItems"
+      "$ref": "#/definitions/Schema/properties/minItems"
     },
     "uniqueItems": {
-      "$ref": "#definitions/schema/properties/uniqueItems"
+      "$ref": "#/definitions/Schema/properties/uniqueItems"
     },
     "enum": {
-      "$ref": "#definitions/schema/properties/enum"
+      "$ref": "#/definitions/Schema/properties/enum"
     },
     "jsonReference": {
       "type": "object",
