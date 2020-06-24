@@ -1,4 +1,5 @@
 {
+  "id": "https://raw.githubusercontent.com/francis-lennon-whs/APIDocSchemas/master/openapi3.json",
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Validation schema for OpenAPI Specification 3.0.X.",
   "type": "object",
